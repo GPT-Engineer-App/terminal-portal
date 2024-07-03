@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { useQuery } from "@tanstack/react-query";
 
 const Index = () => {
   const [showCursor, setShowCursor] = useState(true);
@@ -45,7 +48,7 @@ const Index = () => {
         ))}
         <div className="flex">
           <span>$</span>
-          <input
+          <Input
             type="text"
             value={input}
             onChange={handleInputChange}
