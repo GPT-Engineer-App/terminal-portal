@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   const [showCursor, setShowCursor] = useState(true);
@@ -25,8 +26,16 @@ const Index = () => {
 
   return (
     <div className="text-green-500 font-mono bg-black min-h-screen flex flex-col items-start p-4">
-      <h1 className="text-2xl mb-4">Welcome to Terminal Website</h1>
-      <p className="mb-2">Type 'help' to see available commands.</p>
+      <pre className="text-2xl mb-4">
+        {`
+        ___ ___    __    __  .__   __.  _______ .__   __.  __    __       ___       __  ___  _______ .___  ___.  _______ 
+       /   |   \\  |  |  |  | |  \\ |  | |   ____||  \\ |  | |  |  |  |     /   \\     |  |/  / |   ____||   \\/   | |   ____|
+      /  ^  ^   \\ |  |  |  | |   \\|  | |  |__   |   \\|  | |  |  |  |    /  ^  ^    \\|  '  /  |  |__   |  \\  /  | |  |__   
+     /  /_/_\\  \\ |  |  |  | |  . \`  | |   __|  |  . \`  | |  |  |  |   /  /_/_\\  \\    |    <   |   __|  |  |\\/|  | |   __|  
+    /  _____  \\ |  \`--'  | |  |\\   | |  |____ |  |\\   | |  \`--'  |  /  _____  \\   |  .  \\  |  |____ |  |  |  | |  |____ 
+   /__/     \\__\\ \\______/  |__| \\__| |_______||__| \\__|  \\______/  /__/     \\__\\  |__|\\__\\ |_______||__|  |__| |_______|
+        `}
+      </pre>
       <div className="flex flex-col w-full">
         {output.map((line, index) => (
           <div key={index} className="flex">
@@ -46,6 +55,11 @@ const Index = () => {
           />
           {showCursor && <span className="animate-blink">|</span>}
         </div>
+      </div>
+      <div className="mt-4">
+        <p>1. <Link to="/about" className="text-green-500 hover:underline">About</Link></p>
+        <p>2. <Link to="/vision" className="text-green-500 hover:underline">Vision</Link></p>
+        <p>3. <Link to="/careers" className="text-green-500 hover:underline">Careers</Link></p>
       </div>
     </div>
   );

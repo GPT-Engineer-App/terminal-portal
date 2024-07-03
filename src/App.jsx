@@ -5,6 +5,9 @@ import { Home } from "lucide-react";
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
 import Layout from "./layouts/default"; // available: default, navbar, sidebar
 import Index from "./pages/Index.jsx";
+import About from "./pages/About.jsx";
+import Vision from "./pages/Vision.jsx";
+import Careers from "./pages/Careers.jsx";
 import logo from "../public/logo.png"; // Import the new logo
 
 const queryClient = new QueryClient();
@@ -26,6 +29,9 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route index element={<Index />} />
+              <Route path="about" element={<About />} />
+              <Route path="vision" element={<Vision />} />
+              <Route path="careers" element={<Careers />} />
               {/* Add more routes here as needed */}
             </Route>
           </Routes>
